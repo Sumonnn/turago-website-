@@ -113,10 +113,13 @@ export default function ContactFooter() {
                 </div>
             </section>
 
+
             {/* ================= FOOTER ================= */}
             <footer className="bg-[#17221D] text-white">
-                <div className="mx-auto max-w-[1200px] px-5 pb-10 pt-16 sm:px-8 sm:pt-20">
+                <div className="mx-auto max-w-[1200px] px-5 pb-8 pt-16 sm:px-8 sm:pt-20">
+
                     <div className="grid gap-12 lg:grid-cols-[1.2fr_0.7fr_0.7fr_1.5fr]">
+
                         {/* Brand */}
                         <div>
                             <a
@@ -177,6 +180,7 @@ export default function ContactFooter() {
                                         </a>
                                     </li>
                                 ))}
+
                                 <li>
                                     <a
                                         href="mailto:support@turago.in"
@@ -243,19 +247,39 @@ export default function ContactFooter() {
                     </div>
 
                     {/* Bottom footer */}
-                    <div className="mt-16 flex flex-col gap-5 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-                        <p className="text-xs text-white/40">
-                            © 2026 Turago. All rights reserved.
-                        </p>
+                    <div className="mt-16 border-t border-white/10 pt-7">
+                        <div className="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
 
-                        <a
-                            href="#home"
-                            className="inline-flex items-center gap-2 text-xs font-semibold text-white/55 transition-colors hover:text-[#CFF36B]"
-                        >
-                            Back to top
-                            <ArrowUpRight size={15} />
-                        </a>
+                            {/* Copyright */}
+                            <p className="text-xs text-white/40">
+                                © 2026 Turago. All rights reserved.
+                            </p>
+
+                            {/* Developer credit */}
+                            <p className="text-xs text-white/45">
+                                Designed & Developed by{" "}
+                                <a
+                                    href="https://apconsultingservices.net"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="font-semibold text-[#CFF36B] transition-colors duration-300 hover:text-white"
+                                >
+                                    AP Consulting Services
+                                </a>
+                            </p>
+
+                            {/* Back to top */}
+                            <a
+                                href="#home"
+                                className="inline-flex items-center gap-2 text-xs font-semibold text-white/55 transition-colors hover:text-[#CFF36B]"
+                            >
+                                Back to top
+                                <ArrowUpRight size={15} />
+                            </a>
+
+                        </div>
                     </div>
+
                 </div>
             </footer>
         </>
