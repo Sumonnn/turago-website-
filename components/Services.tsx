@@ -1,6 +1,11 @@
 
-import { ArrowUpRight, Bike, CarFront, CheckCircle2 } from "lucide-react";
-
+import {
+    ArrowUpRight,
+    Bike,
+    CarFront,
+    CheckCircle2,
+    Package,
+} from "lucide-react";
 
 const services = [
     {
@@ -45,8 +50,22 @@ const services = [
         ],
         theme: "green",
     },
+    {
+        number: "04",
+        title: "Parcel Delivery",
+        subtitle: "Delivering more. Coming soon.",
+        description:
+            "A smarter way to send parcels with Turago. We are working on a convenient delivery experience to help move your packages with ease.",
+        icon: Package,
+        features: [
+            "Convenient parcel delivery",
+            "Easy package transportation",
+            "A smarter delivery experience",
+        ],
+        theme: "dark",
+        comingSoon: true,
+    },
 ];
-
 
 export default function Services() {
     return (
@@ -64,17 +83,20 @@ export default function Services() {
 
                         <h2 className="mt-6 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-[#17221D] sm:text-5xl lg:text-[56px]">
                             Choose your ride.
-                            <span className="text-[#12A66A]"> Enjoy the journey.</span>
+                            <span className="text-[#12A66A]">
+                                {" "}Enjoy the journey.
+                            </span>
                         </h2>
                     </div>
 
                     <p className="max-w-md text-base leading-8 text-[#17221D]/60">
-                        Whether you need a quick city ride or a more comfortable journey,
-                        Turago brings convenient mobility options together.
+                        Whether you need a quick city ride, a comfortable journey,
+                        or a convenient delivery solution, Turago brings
+                        mobility options together.
                     </p>
                 </div>
 
-                <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                     {services.map((service) => {
                         const Icon = service.icon;
                         const isGreen = service.theme === "green";
@@ -82,13 +104,15 @@ export default function Services() {
                         return (
                             <article
                                 key={service.number}
-                                className={`group relative overflow-hidden rounded-[32px] p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(23,34,29,0.12)] sm:p-10 lg:p-12 ${isGreen
-                                    ? "bg-[#12A66A] text-white"
-                                    : "bg-[#17221D] text-white"
+                                className={`group relative overflow-hidden rounded-[32px] p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_24px_60px_rgba(23,34,29,0.12)] sm:p-8 lg:p-9 ${isGreen
+                                        ? "bg-[#12A66A] text-white"
+                                        : "bg-[#17221D] text-white"
                                     }`}
                             >
                                 <div
-                                    className={`absolute -right-20 -top-20 h-72 w-72 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${isGreen ? "bg-[#CFF36B]/20" : "bg-[#12A66A]/25"
+                                    className={`absolute -right-20 -top-20 h-72 w-72 rounded-full blur-3xl transition-transform duration-500 group-hover:scale-125 ${isGreen
+                                            ? "bg-[#CFF36B]/20"
+                                            : "bg-[#12A66A]/25"
                                         }`}
                                 />
 
@@ -99,24 +123,31 @@ export default function Services() {
                                         </span>
 
                                         <div
-                                            className={`flex h-16 w-16 items-center justify-center rounded-2xl ${isGreen
-                                                ? "bg-white/15 text-[#CFF36B]"
-                                                : "bg-[#CFF36B] text-[#17221D]"
+                                            className={`flex h-14 w-14 items-center justify-center rounded-2xl ${isGreen
+                                                    ? "bg-white/15 text-[#CFF36B]"
+                                                    : "bg-[#CFF36B] text-[#17221D]"
                                                 }`}
                                         >
-                                            <Icon size={32} strokeWidth={1.7} />
+                                            <Icon size={29} strokeWidth={1.7} />
                                         </div>
                                     </div>
 
-                                    <p className="mt-12 text-sm font-semibold tracking-wide text-[#CFF36B]">
+                                    {service.comingSoon && (
+                                        <span className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#CFF36B]/30 bg-[#CFF36B]/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#CFF36B]">
+                                            <span className="h-2 w-2 rounded-full bg-[#CFF36B] animate-pulse" />
+                                            Coming Soon
+                                        </span>
+                                    )}
+
+                                    <p className="mt-8 text-sm font-semibold tracking-wide text-[#CFF36B]">
                                         {service.subtitle}
                                     </p>
 
-                                    <h3 className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
+                                    <h3 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
                                         {service.title}
                                     </h3>
 
-                                    <p className="mt-5 max-w-md text-base leading-8 text-white/70">
+                                    <p className="mt-5 text-sm leading-7 text-white/70">
                                         {service.description}
                                     </p>
 
@@ -135,19 +166,26 @@ export default function Services() {
                                         ))}
                                     </div>
 
-                                    <a
-                                        href="#download"
-                                        className={`mt-10 inline-flex items-center gap-3 rounded-full px-6 py-4 text-sm font-bold transition-all duration-300 ${isGreen
-                                            ? "bg-[#CFF36B] text-[#17221D] hover:bg-white"
-                                            : "bg-white text-[#17221D] hover:bg-[#CFF36B]"
-                                            }`}
-                                    >
-                                        Explore Turago
-                                        <ArrowUpRight
-                                            size={19}
-                                            className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                                        />
-                                    </a>
+                                    {service.comingSoon ? (
+                                        <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-6 py-4 text-sm font-bold text-white/60">
+                                            Coming Soon
+                                            <Package size={19} />
+                                        </div>
+                                    ) : (
+                                        <a
+                                            href="#download"
+                                            className={`mt-10 inline-flex items-center gap-3 rounded-full px-6 py-4 text-sm font-bold transition-all duration-300 ${isGreen
+                                                    ? "bg-[#CFF36B] text-[#17221D] hover:bg-white"
+                                                    : "bg-white text-[#17221D] hover:bg-[#CFF36B]"
+                                                }`}
+                                        >
+                                            Explore Turago
+                                            <ArrowUpRight
+                                                size={19}
+                                                className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                            />
+                                        </a>
+                                    )}
                                 </div>
                             </article>
                         );

@@ -73,45 +73,299 @@ function AppLink({
 }
 
 export default function ContactFooter() {
+
     return (
         <>
+
             {/* ================= CONTACT SECTION ================= */}
             <section
                 id="contact"
                 className="bg-[#FBFCF8] px-5 py-24 sm:px-8 sm:py-28"
             >
                 <div className="mx-auto max-w-[1200px]">
-                    <div className="relative overflow-hidden rounded-[32px] bg-[#CFF36B] px-7 py-12 sm:px-12 sm:py-16 lg:px-16">
-                        <div className="absolute -right-20 -top-28 h-80 w-80 rounded-full bg-white/30 blur-3xl" />
 
-                        <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
-                            <div>
-                                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#17221D]/60">
-                                    Get in Touch
+                    {/* Section Heading */}
+                    <div className="mb-14 max-w-2xl">
+                        <span className="inline-flex items-center gap-2 rounded-full border border-[#12A66A]/20 bg-[#12A66A]/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#12A66A]">
+                            <span className="h-2 w-2 rounded-full bg-[#12A66A]" />
+                            Get in Touch
+                        </span>
+
+                        <h2 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-[#17221D] sm:text-5xl lg:text-[56px]">
+                            {`Let's talk about`}
+                            <span className="text-[#12A66A]"> Turago.</span>
+                        </h2>
+
+                        <p className="mt-5 max-w-xl text-base leading-8 text-[#17221D]/60">
+                            {`Have a question, need assistance, or want to become
+                            part of Turago? We'd love to hear from you.
+                            Send us your enquiry and our team will get back to you.`}
+                        </p>
+                    </div>
+
+                    <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
+
+                        {/* LEFT: Contact Information */}
+                        <div className="relative overflow-hidden rounded-[32px] bg-[#17221D] p-8 text-white sm:p-10 lg:p-12">
+
+                            <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#12A66A]/20 blur-3xl" />
+
+                            <div className="relative">
+                                <span className="text-xs font-bold uppercase tracking-[0.18em] text-[#CFF36B]">
+                                    Contact Information
                                 </span>
 
-                                <h2 className="mt-5 max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-[#17221D] sm:text-5xl">
-                                    {`Let's make your next journey better.`}
-                                </h2>
+                                <h3 className="mt-6 text-3xl font-extrabold leading-tight sm:text-4xl">
+                                    {`We're here to help you.`}
+                                </h3>
 
-                                <p className="mt-5 max-w-xl text-base leading-8 text-[#17221D]/65">
-                                    Have questions about Turago or need assistance?
-                                    Our team is here to help.
+                                <p className="mt-5 text-sm leading-8 text-white/60">
+                                    {`Whether you're a customer, a pilot, or a business
+                                    partner, our team is ready to assist you.`}
+                                </p>
+
+                                <div className="mt-12 space-y-8">
+
+                                    {/* Email */}
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#CFF36B]/15 text-[#CFF36B]">
+                                            <Mail size={22} />
+                                        </div>
+
+                                        <div>
+                                            <p className="text-xs font-semibold uppercase tracking-wider text-white/40">
+                                                Email Us
+                                            </p>
+
+                                            <a
+                                                href="mailto:support@turago.in"
+                                                className="mt-2 block text-base font-semibold transition-colors hover:text-[#CFF36B]"
+                                            >
+                                                support@turago.in
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    {/* Website */}
+                                    <div className="flex items-start gap-4">
+                                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#CFF36B]/15 text-[#CFF36B]">
+                                            <ArrowUpRight size={22} />
+                                        </div>
+
+                                        <div>
+                                            <p className="text-xs font-semibold uppercase tracking-wider text-white/40">
+                                                Our Website
+                                            </p>
+
+                                            <a
+                                                href="https://turago.in"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mt-2 block text-base font-semibold transition-colors hover:text-[#CFF36B]"
+                                            >
+                                                www.turago.in
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Bottom Highlight */}
+                                <div className="mt-16 rounded-2xl border border-white/10 bg-white/5 p-6">
+                                    <p className="text-sm font-bold text-[#CFF36B]">
+                                        Join the Turago Community
+                                    </p>
+
+                                    <p className="mt-2 text-sm leading-7 text-white/60">
+                                        {`Better mobility starts with better connections.
+                                        Let's make every journey count.`}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* RIGHT: Enquiry Form */}
+                        <div className="rounded-[32px] border border-[#17221D]/5 bg-white p-7 shadow-[0_15px_50px_rgba(23,34,29,0.05)] sm:p-10 lg:p-12">
+
+                            <div className="mb-9">
+                                <h3 className="text-2xl font-extrabold text-[#17221D] sm:text-3xl">
+                                    Send us an enquiry
+                                </h3>
+
+                                <p className="mt-3 text-sm leading-7 text-[#17221D]/55">
+                                    Fill in the details below and let us know how
+                                    we can help.
                                 </p>
                             </div>
 
-                            <a
-                                href="mailto:support@turago.in"
-                                className="inline-flex items-center justify-center gap-3 self-start rounded-full bg-[#17221D] px-7 py-4 text-sm font-bold text-white transition-all hover:bg-[#12A66A]"
+                            <form
+                                action="mailto:support@turago.in"
+                                method="POST"
+                                encType="text/plain"
+                                className="space-y-6"
                             >
-                                <Mail size={19} />
-                                Contact Our Team
-                                <ArrowUpRight size={18} />
-                            </a>
+                                {/* Full Name */}
+                                <div>
+                                    <label
+                                        htmlFor="fullName"
+                                        className="mb-2 block text-sm font-bold text-[#17221D]"
+                                    >
+                                        Full Name <span className="text-[#12A66A]">*</span>
+                                    </label>
+
+                                    <input
+                                        id="fullName"
+                                        name="Full Name"
+                                        type="text"
+                                        placeholder="Enter your full name"
+                                        required
+                                        autoComplete="name"
+                                        className="w-full rounded-xl border border-[#17221D]/10 bg-[#FBFCF8] px-5 py-4 text-sm text-[#17221D] outline-none transition-all placeholder:text-[#17221D]/35 focus:border-[#12A66A] focus:ring-4 focus:ring-[#12A66A]/10"
+                                    />
+                                </div>
+
+                                {/* Email and Phone */}
+                                <div className="grid gap-6 sm:grid-cols-2">
+                                    <div>
+                                        <label
+                                            htmlFor="email"
+                                            className="mb-2 block text-sm font-bold text-[#17221D]"
+                                        >
+                                            Email Address <span className="text-[#12A66A]">*</span>
+                                        </label>
+
+                                        <input
+                                            id="email"
+                                            name="Email"
+                                            type="email"
+                                            placeholder="your@email.com"
+                                            required
+                                            autoComplete="email"
+                                            className="w-full rounded-xl border border-[#17221D]/10 bg-[#FBFCF8] px-5 py-4 text-sm text-[#17221D] outline-none transition-all placeholder:text-[#17221D]/35 focus:border-[#12A66A] focus:ring-4 focus:ring-[#12A66A]/10"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            htmlFor="phone"
+                                            className="mb-2 block text-sm font-bold text-[#17221D]"
+                                        >
+                                            Phone Number
+                                        </label>
+
+                                        <input
+                                            id="phone"
+                                            name="Phone Number"
+                                            type="tel"
+                                            placeholder="+91 XXXXX XXXXX"
+                                            autoComplete="tel"
+                                            className="w-full rounded-xl border border-[#17221D]/10 bg-[#FBFCF8] px-5 py-4 text-sm text-[#17221D] outline-none transition-all placeholder:text-[#17221D]/35 focus:border-[#12A66A] focus:ring-4 focus:ring-[#12A66A]/10"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Enquiry Type */}
+                                <div>
+                                    <label
+                                        htmlFor="enquiry"
+                                        className="mb-2 block text-sm font-bold text-[#17221D]"
+                                    >
+                                        Enquiry About <span className="text-[#12A66A]">*</span>
+                                    </label>
+
+                                    <select
+                                        id="enquiry"
+                                        name="Enquiry About"
+                                        required
+                                        defaultValue=""
+                                        className="w-full appearance-none rounded-xl border border-[#17221D]/10 bg-[#FBFCF8] px-5 py-4 text-sm text-[#17221D] outline-none transition-all focus:border-[#12A66A] focus:ring-4 focus:ring-[#12A66A]/10"
+                                    >
+                                        <option value="" disabled>
+                                            Select your enquiry type
+                                        </option>
+
+                                        <option value="Turago Customer">
+                                            Turago Customer
+                                        </option>
+
+                                        <option value="Turago Pilot">
+                                            Turago Pilot
+                                        </option>
+
+                                        <option value="Business / Partnership">
+                                            Business / Partnership
+                                        </option>
+
+                                        <option value="General Enquiry">
+                                            General Enquiry
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+                                    </select>
+                                </div>
+
+                                {/* Subject */}
+                                <div>
+                                    <label
+                                        htmlFor="subject"
+                                        className="mb-2 block text-sm font-bold text-[#17221D]"
+                                    >
+                                        Subject <span className="text-[#12A66A]">*</span>
+                                    </label>
+
+                                    <input
+                                        id="subject"
+                                        name="Subject"
+                                        type="text"
+                                        placeholder="What is your enquiry about?"
+                                        required
+                                        className="w-full rounded-xl border border-[#17221D]/10 bg-[#FBFCF8] px-5 py-4 text-sm text-[#17221D] outline-none transition-all placeholder:text-[#17221D]/35 focus:border-[#12A66A] focus:ring-4 focus:ring-[#12A66A]/10"
+                                    />
+                                </div>
+
+                                {/* Message */}
+                                <div>
+                                    <label
+                                        htmlFor="message"
+                                        className="mb-2 block text-sm font-bold text-[#17221D]"
+                                    >
+                                        Your Message <span className="text-[#12A66A]">*</span>
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        name="Message"
+                                        rows={5}
+                                        placeholder="Tell us how we can help you..."
+                                        required
+                                        className="w-full resize-none rounded-xl border border-[#17221D]/10 bg-[#FBFCF8] px-5 py-4 text-sm text-[#17221D] outline-none transition-all placeholder:text-[#17221D]/35 focus:border-[#12A66A] focus:ring-4 focus:ring-[#12A66A]/10"
+                                    />
+                                </div>
+
+                                {/* Submit */}
+                                <button
+                                    type="submit"
+                                    className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#12A66A] px-7 py-5 text-sm font-bold text-white transition-all duration-300 hover:bg-[#17221D] hover:shadow-xl"
+                                >
+                                    Submit Enquiry
+
+                                    <ArrowUpRight
+                                        size={19}
+                                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+                                    />
+                                </button>
+
+                                <p className="text-center text-xs leading-6 text-[#17221D]/45">
+                                    Your information will only be used to respond
+                                    to your enquiry.
+                                </p>
+                            </form>
                         </div>
                     </div>
                 </div>
             </section>
+
 
 
             {/* ================= FOOTER ================= */}
